@@ -106,7 +106,9 @@ class S3_Operation:
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
 
-    def read_object(self, object, log_file, decode=True, make_readable=False):
+    def read_object(
+        self, object, log_file, decode=True, make_readable=False,
+    ):
         """
         Method Name :   read_object
         Description :   This method reads the object with kwargs
@@ -204,7 +206,9 @@ class S3_Operation:
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
 
-    def save_model(self, model, model_dir, model_bucket, log_file, idx=None):
+    def save_model(
+        self, model, model_dir, model_bucket, log_file, idx=None,
+    ):
         """
         Method Name :   save_model
         Description :   This method saves the model into particular model directory in s3 bucket with kwargs
