@@ -1,8 +1,9 @@
+from time import time
+
 from train_data_validation import Raw_Train_Data_Validation
 from utils.logger import App_Logger
 from utils.main_utils import Main_Utils
 from utils.read_params import get_log_dic
-from time import time
 
 
 class Run:
