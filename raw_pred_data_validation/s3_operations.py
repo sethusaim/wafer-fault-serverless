@@ -6,7 +6,6 @@ from os.path import join
 from boto3 import client, resource
 from botocore.exceptions import ClientError
 from pandas import read_csv
-
 from utils.logger import App_Logger
 from utils.read_params import get_log_dic, read_params
 
