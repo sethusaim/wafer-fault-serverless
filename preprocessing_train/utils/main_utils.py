@@ -4,7 +4,6 @@ from shutil import rmtree
 from numpy import asarray
 from pandas import DataFrame
 from s3_operations import S3_Operation
-
 from utils.logger import App_Logger
 from utils.read_params import get_log_dic, read_params
 
