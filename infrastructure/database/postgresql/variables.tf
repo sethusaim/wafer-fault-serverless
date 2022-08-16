@@ -45,7 +45,7 @@ variable "db_publicly_accessible" {
 
 variable "db_skip_final_snaphost" {
   default = true
-  type    = true
+  type    = bool
 }
 
 variable "db_sg_name" {
@@ -90,16 +90,11 @@ variable "db_egress_protocol" {
 
 variable "db_egress_cidr_blocks" {
   default = ["0.0.0.0/0"]
-  type    = string
+  type    = list(string)
 }
 
 variable "db_sg_tag_name" {
   default = "mlflow_rds"
-  type    = string
-}
-
-variable "aws_vpc_module_version" {
-  default = "3.14.2"
   type    = string
 }
 
