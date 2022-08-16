@@ -7,7 +7,11 @@ terraform {
 }
 
 module "mongodb_database" {
-  source = "./database"
+  source = "./database/mongodb"
+}
+
+module "postgresql_database" {
+  source = "./database/postgresql"
 }
 
 module "feature_store_bucket" {
