@@ -10,6 +10,14 @@ demotest.py
 
 demo
 
+.terraform
+
+terraform.tfstate
+
+terraform.tfstate.backup
+
+.terraform.lock.hcl
+
 # Distribution / packaging
 .Python
 build/
