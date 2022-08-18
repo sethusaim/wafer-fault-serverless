@@ -1,7 +1,6 @@
 module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "3.14.2"
-
+  source               = "terraform-aws-modules/vpc/aws"
+  version              = "3.14.2"
   name                 = var.db_vpc_name
   cidr                 = var.db_vpc_cidr
   azs                  = data.aws_availability_zones.available.names
@@ -13,7 +12,6 @@ module "vpc" {
 resource "aws_db_subnet_group" "mlflow" {
   name       = var.db_subnet_group_name
   subnet_ids = module.vpc.public_subnets
-
   tags = {
     Name = var.db_subnet_group_tag_name
   }
