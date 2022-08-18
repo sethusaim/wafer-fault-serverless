@@ -6,6 +6,15 @@ terraform {
   }
 }
 
+module "train_step_function" {
+  source = "./step_functions/train"
+}
+
+module "prediction_step_function" {
+  source = "./step_functions/prediction"
+  
+}
+
 module "mongodb_database" {
   source = "./database/mongodb"
 }
