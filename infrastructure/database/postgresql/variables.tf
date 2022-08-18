@@ -34,7 +34,7 @@ variable "db_instance_class" {
 }
 
 variable "db_identifier" {
-  default = "mlflow_db_instance"
+  default = "mlflow"
   type    = string
 }
 
@@ -134,7 +134,7 @@ variable "db_subnet_group_tag_name" {
 }
 
 variable "db_parameter_group_name" {
-  default = "mlflow_rds_pg"
+  default = "mlflow"
   type    = string
 }
 
