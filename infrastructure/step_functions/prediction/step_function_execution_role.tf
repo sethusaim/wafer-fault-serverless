@@ -25,3 +25,6 @@ resource "aws_iam_policy_attachment" "step_function_xray_access_policy_attachmen
   policy_arn = aws_iam_policy.step_function_xray_access_policy.arn
 }
 
+data "local_file" "pred_step_function_lambda_invoke_policy_file" {
+  filename = "./data/policies/pred_step_function_lambda_invoke_policy.json"
+}
