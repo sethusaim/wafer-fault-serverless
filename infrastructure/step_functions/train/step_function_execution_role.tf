@@ -25,14 +25,3 @@ resource "aws_iam_policy_attachment" "step_function_xray_access_policy_attachmen
   policy_arn = aws_iam_policy.step_function_xray_access_policy.arn
 }
 
-data "local_file" "step_function_lambda_invole_role_file" {
-  filename = "./data/roles/train_step_function_lambda_invole_role.json"
-}
-
-data "local_file" "step_function_xray_access_policy_file" {
-  filename = "./data/policies/train_step_function_xray_access_policy.json"
-}
-
-data "local_file" "step_function_lambda_invoke_policy_file" {
-  filename = "./data/policies/train_step_function_lambda_invoke_policy.json"
-}
