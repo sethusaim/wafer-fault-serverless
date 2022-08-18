@@ -13,3 +13,11 @@ data "local_file" "train_step_function_lambda_invoke_policy_file" {
 data "local_file" "pred_step_function_lambda_invoke_policy_file" {
   filename = "./data/policies/pred_step_function_lambda_invoke_policy.json"
 }
+
+data "local_file" "pred_step_function_file" {
+  filename = "./data/step_functions/pred_step_function.json"
+}
+
+data "local_file" "train_step_function_file" {
+  filename = "./data/step_functions/train_step_function.json"
+}
