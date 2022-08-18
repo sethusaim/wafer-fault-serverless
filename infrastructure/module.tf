@@ -10,7 +10,7 @@ module "train_step_function" {
   source = "./step_functions/train"
 }
 
-module "prediction_step_function" {
+module "pred_step_function" {
   source = "./step_functions/prediction"
 }
 
