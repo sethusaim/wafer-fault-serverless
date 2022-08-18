@@ -12,7 +12,6 @@ module "train_step_function" {
 
 module "prediction_step_function" {
   source = "./step_functions/prediction"
-  
 }
 
 module "mongodb_database" {
