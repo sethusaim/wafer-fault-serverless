@@ -1,3 +1,5 @@
+from json import dumps
+
 from clustering import KMeans_Clustering
 from utils.logger import App_Logger
 from utils.main_utils import Main_Utils
@@ -87,8 +89,7 @@ class Run:
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
 
-
-if __name__ == "__main__":
+def lambda_handler(event,context):
     try:
         run = Run()
 
@@ -101,3 +102,8 @@ if __name__ == "__main__":
         utils = Main_Utils()
 
         utils.upload_logs()
+    
+    return {
+        "statusCode": 200,
+        "body": dumps("Clustering Function executed")
+    }
