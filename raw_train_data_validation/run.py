@@ -1,5 +1,3 @@
-from time import time
-
 from train_data_validation import Raw_Train_Data_Validation
 from utils.logger import App_Logger
 from utils.main_utils import Main_Utils
@@ -68,9 +66,6 @@ class Run:
 
 
 if __name__ == "__main__":
-
-    start_time = time()
-
     try:
         run = Run()
 
@@ -83,11 +78,3 @@ if __name__ == "__main__":
         utils = Main_Utils()
 
         utils.upload_logs()
-
-    end_time = time()
-
-    res = end_time - start_time
-
-    final_res = res * 1000
-
-    print(f"Execution time : {final_res} milliseconds")
