@@ -89,11 +89,14 @@ class Run:
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
 
-def lambda_handler(event,context):
+
+def lambda_handler(event, context):
     try:
         run = Run()
 
         run.run_clustering()
+
+        return {"statusCode": 200, "body": dumps("Clustering Function executed")}
 
     except Exception as e:
         raise e
@@ -102,8 +105,3 @@ def lambda_handler(event,context):
         utils = Main_Utils()
 
         utils.upload_logs()
-    
-    return {
-        "statusCode": 200,
-        "body": dumps("Clustering Function executed")
-    }
