@@ -48,7 +48,7 @@ pipeline {
 
         REPO_NAME = "wafer_clustering"
 
-        COMP_FILE = "wafer_clustering.txt"
+        COMP_FILE = "wafer_clustering_uri.txt"
       }
 
       when {
@@ -82,7 +82,7 @@ pipeline {
 
         REPO_NAME = "wafer_data_transform_pred"
 
-        COMP_FILE = "wafer_data_transform_pred.txt"
+        COMP_FILE = "wafer_data_transform_pred_uri.txt"
       }
 
       when {
@@ -117,7 +117,7 @@ pipeline {
 
         REPO_NAME = "wafer_data_transform_train"
 
-        COMP_FILE = "wafer_data_transform_train.txt"
+        COMP_FILE = "wafer_data_transform_train_uri.txt"
       }
 
       when {
@@ -154,7 +154,7 @@ pipeline {
 
         REPO_NAME = "wafer_db_operation_pred"
 
-        COMP_FILE = "wafer_db_operation_pred.txt"
+        COMP_FILE = "wafer_db_operation_pred_uri.txt"
       }
 
       when {
@@ -190,7 +190,7 @@ pipeline {
 
         REPO_NAME = "wafer_db_operation_train"
 
-        COMP_FILE = "wafer_db_operation_train.txt"
+        COMP_FILE = "wafer_db_operation_train_uri.txt"
       }
 
       when {
@@ -231,7 +231,7 @@ pipeline {
 
         REPO_NAME = "wafer_load_prod_model"
 
-        COMP_FILE = "wafer_load_prod_model.txt"
+        COMP_FILE = "wafer_load_prod_model_uri.txt"
       }
 
       when {
@@ -266,7 +266,7 @@ pipeline {
 
         REPO_NAME = "wafer_model_prediction"
 
-        COMP_FILE = "wafer_model_prediction.txt"
+        COMP_FILE = "wafer_model_prediction_uri.txt"
       }
 
       when {
@@ -309,7 +309,7 @@ pipeline {
 
         REPO_NAME = "wafer_model_training"
 
-        COMP_FILE = "wafer_model_training.txt"
+        COMP_FILE = "wafer_model_training_uri.txt"
       }
 
       when {
@@ -344,7 +344,7 @@ pipeline {
 
         REPO_NAME = "wafer_preprocessing_pred"
 
-        COMP_FILE = "wafer_preprocessing_pred.txt"
+        COMP_FILE = "wafer_preprocessing_pred_uri.txt"
       }
 
       when {
@@ -380,7 +380,7 @@ pipeline {
 
         REPO_NAME = "wafer_preprocessing_train"
 
-        COMP_FILE = "wafer_preprocessing_train.txt"
+        COMP_FILE = "wafer_preprocessing_train_uri.txt"
       }
 
       when {
@@ -414,7 +414,7 @@ pipeline {
 
         REPO_NAME = "wafer_raw_pred_data_validation"
 
-        COMP_FILE = "wafer_raw_pred_data_validation.txt"
+        COMP_FILE = "wafer_raw_pred_data_validation_uri.txt"
       }
 
       when {
@@ -450,7 +450,7 @@ pipeline {
 
         REPO_NAME = "wafer_raw_train_data_validation"
 
-        COMP_FILE = "wafer_raw_train_data_validation.txt"
+        COMP_FILE = "wafer_raw_train_data_validation_uri.txt"
       }
 
       when {
