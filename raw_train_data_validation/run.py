@@ -1,5 +1,3 @@
-from json import dumps
-
 from train_data_validation import Raw_Train_Data_Validation
 from utils.logger import App_Logger
 from utils.main_utils import Main_Utils
@@ -65,20 +63,3 @@ class Run:
 
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
-
-
-def lambda_handler(event,context):
-    try:
-        run = Run()
-
-        run.raw_train_data_validation()
-        
-        return {"statusCode": 200, "body": dumps("Clustering Function executed")}
-
-    except Exception as e:
-        raise e
-
-    finally:
-        utils = Main_Utils()
-
-        utils.upload_logs()
