@@ -63,3 +63,18 @@ class Run:
 
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
+
+
+def lambda_handler(event, context):
+    try:
+        run = Run()
+
+        run.raw_train_data_validation()
+
+    except Exception as e:
+        raise e
+
+    finally:
+        utils = Main_Utils()
+
+        utils.upload_logs()
