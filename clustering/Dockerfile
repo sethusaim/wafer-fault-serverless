@@ -2,18 +2,6 @@ FROM public.ecr.aws/lambda/python:3.8
 
 COPY . .
 
-ARG AWS_ACCESS_KEY_ID
-
-ARG AWS_SECRET_ACCESS_KEY
-
-ARG AWS_DEFAULT_REGION
-
-ENV AWS_ACCESS_KEY_ID $AWS_ACCESS_KEY_ID
-
-ENV AWS_SECRET_ACCESS_KEY $AWS_SECRET_ACCESS_KEY
-
-ENV AWS_DEFAULT_REGION $AWS_DEFAULT_REGION
-
-RUN python3.8 -m pip install -r requirements.txt -t .
+RUN pip3 install -r requirements.txt 
 
 CMD ["run.lambda_handler"]
