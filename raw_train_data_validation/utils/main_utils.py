@@ -75,7 +75,7 @@ class Main_Utils:
         self.log_writer.start_log("start", **log_dic)
 
         try:
-            train_fname = self.dir[key] + "/" + fname
+            train_fname = "/tmp" + "/" + self.dir[key] + "/" + fname
 
             self.log_writer.log(f"Got the file name for {key}", **log_dic)
 
