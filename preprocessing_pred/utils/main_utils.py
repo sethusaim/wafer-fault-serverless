@@ -53,7 +53,7 @@ class Main_Utils:
 
             self.log_writer.stop_log()
 
-            rmtree(self.log_dir)
+            rmtree(log_folder)
 
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
