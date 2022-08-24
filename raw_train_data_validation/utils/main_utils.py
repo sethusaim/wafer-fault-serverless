@@ -44,7 +44,9 @@ class Main_Utils:
         self.log_writer.start_log("start", **log_dic)
 
         try:
-            self.s3.upload_folder(self.log_dir, "logs", log_dic["log_file"])
+            log_folder = "/tmp" + "/" + self.log_dir
+
+            self.s3.upload_folder(log_folder, "logs", log_dic["log_file"])
 
             self.log_writer.log("Uploaded logs to logs bucket", **log_dic)
 
