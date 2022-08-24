@@ -1,6 +1,5 @@
 from data_loader_train import Data_Getter_Train
 from preprocessing import Preprocessor
-
 from utils.logger import App_Logger
 from utils.main_utils import Main_Utils
 from utils.read_params import get_log_dic
