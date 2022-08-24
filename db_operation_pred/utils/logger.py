@@ -11,7 +11,7 @@ class App_Logger:
     def __init__(self):
         self.config = read_params()
 
-        self.log_dir = self.config["dir"]["log"]
+        self.log_dir = "/tmp" + "/" + self.config["dir"]["log"]
 
         self.log_params = self.config["log_params"]
 
