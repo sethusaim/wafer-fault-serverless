@@ -4,6 +4,7 @@ from os.path import join
 
 from boto3 import resource
 from pandas import read_csv
+
 from utils.logger import App_Logger
 from utils.read_params import get_log_dic, read_params
 
@@ -375,7 +376,9 @@ class S3_Operation:
         self.log_writer.start_log("start", **log_dic)
 
         try:
-            data_frame.to_csv(local_fname, index=None, header=True)
+            fname = "/tmp" + "/" + local_fname
+
+            data_frame.to_csv(fname, index=None, header=True)
 
             self.log_writer.log(
                 f"Created a local copy of dataframe with name {local_fname}", **log_dic
