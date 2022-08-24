@@ -1,3 +1,5 @@
+from json import dumps
+
 from train_data_validation import Raw_Train_Data_Validation
 from utils.logger import App_Logger
 from utils.main_utils import Main_Utils
@@ -70,6 +72,10 @@ def lambda_handler(event, context):
         run = Run()
 
         run.raw_train_data_validation()
+        return {
+            "statusCode": 200,
+            "body": dumps("Raw Train Data Validation Function executed"),
+        }
 
     except Exception as e:
         raise e
