@@ -51,20 +51,21 @@ class Run:
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
 
-def lambda_handler(event,context):
+
+def lambda_handler(event, context):
     try:
         run = Run()
 
         run.pred_data_transform()
 
         return {
-            "statusCode":200,
-            "body": dumps("Data Transform Prediction Function executed")
+            "statusCode": 200,
+            "body": dumps("Data Transform Prediction Function executed"),
         }
 
     except Exception as e:
-        raise e 
-    
+        raise e
+
     finally:
         utils = Main_Utils()
 
