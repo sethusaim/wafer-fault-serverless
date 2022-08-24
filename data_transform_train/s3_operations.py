@@ -376,13 +376,15 @@ class S3_Operation:
         self.log_writer.start_log("start", **log_dic)
 
         try:
-            data_frame.to_csv(local_fname, index=None, header=True)
+            fname = "/tmp" + "/" + local_fname
+
+            data_frame.to_csv(fname, index=None, header=True)
 
             self.log_writer.log(
                 f"Created a local copy of dataframe with name {local_fname}", **log_dic
             )
 
-            self.upload_file(local_fname, bucket_fname, bucket, log_dic["log_file"])
+            self.upload_file(fname, bucket_fname, bucket, log_dic["log_file"])
 
             self.log_writer.start_log("exit", **log_dic)
 
