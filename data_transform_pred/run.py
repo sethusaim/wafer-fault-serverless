@@ -1,3 +1,5 @@
+from json import dumps
+
 from data_transformation_pred import Data_Transform_Pred
 from utils.logger import App_Logger
 from utils.main_utils import Main_Utils
@@ -49,16 +51,20 @@ class Run:
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
 
-
-if __name__ == "__main__":
+def lambda_handler(event,context):
     try:
         run = Run()
 
         run.pred_data_transform()
 
-    except Exception as e:
-        raise e
+        return {
+            "statusCode":200,
+            "body": dumps("Data Transform Prediction Function executed")
+        }
 
+    except Exception as e:
+        raise e 
+    
     finally:
         utils = Main_Utils()
 
