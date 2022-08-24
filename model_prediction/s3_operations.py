@@ -5,6 +5,7 @@ from pickle import loads
 
 from boto3 import resource
 from pandas import read_csv
+
 from utils.logger import App_Logger
 from utils.read_params import get_log_dic, read_params
 
@@ -379,8 +380,8 @@ class S3_Operation:
 
         try:
             func = lambda fname: self.files[fname] if fidx is False else fname
-
-            local_fname = func(local_fname)
+            
+            local_fname = "/tmp" + "/" + func(local_fname)
 
             bucket_fname = func(bucket_fname)
 
