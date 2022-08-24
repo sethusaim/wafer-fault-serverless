@@ -2,10 +2,11 @@ from datetime import datetime
 from shutil import rmtree
 
 import xgboost
-from s3_operations import S3_Operation
 from sklearn.metrics import accuracy_score, roc_auc_score
 from sklearn.model_selection import GridSearchCV
 from sklearn.utils import all_estimators
+
+from s3_operations import S3_Operation
 from utils.logger import App_Logger
 from utils.read_params import get_log_dic, read_params
 
@@ -51,7 +52,9 @@ class Main_Utils:
         self.log_writer.start_log("start", **log_dic)
 
         try:
-            self.s3.upload_folder(self.log_dir, "logs", log_dic["log_file"])
+            log_folder = "/tmp" + "/" + self.log_dir
+
+            self.s3.upload_folder(log_folder, "logs", log_dic["log_file"])
 
             self.log_writer.log("Uploaded logs to s3 bucket", **log_dic)
 
@@ -59,7 +62,7 @@ class Main_Utils:
 
             self.log_writer.stop_log()
 
-            rmtree(self.log_dir)
+            rmtree(log_folder)
 
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
@@ -82,7 +85,7 @@ class Main_Utils:
         self.log_writer.start_log("start", **log_dic)
 
         try:
-            cluster_fname = "-wafer_train_" + key + f"-{idx}.csv"
+            cluster_fname = "/tmp" + "/" + "-wafer_train_" + key + f"{-idx}.csv"
 
             self.log_writer.log(f"Got the cluster file name for {key}", **log_dic)
 
