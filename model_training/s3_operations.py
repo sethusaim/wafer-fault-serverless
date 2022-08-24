@@ -6,6 +6,7 @@ from pickle import dump, loads
 
 from boto3 import resource
 from pandas import read_csv
+
 from utils.logger import App_Logger
 from utils.read_params import get_log_dic, read_params
 
@@ -241,7 +242,7 @@ class S3_Operation:
                 else self.current_date + "-" + model_name + str(idx) + self.save_format
             )
 
-            model_file = func()
+            model_file = "/tmp" + "/" + func()
 
             with open(file=model_file, mode="wb") as f:
                 dump(model, f)
