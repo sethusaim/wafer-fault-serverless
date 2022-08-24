@@ -1,3 +1,5 @@
+from json import dumps
+
 from data_transformation_train import Data_Transform_Train
 from utils.logger import App_Logger
 from utils.main_utils import Main_Utils
@@ -50,11 +52,16 @@ class Run:
             self.log_writer.exception_log(e, **log_dic)
 
 
-if __name__ == "__main__":
+def lambda_handler(event, context):
     try:
         run = Run()
 
         run.train_data_transform()
+
+        return {
+            "statusCode": 200,
+            "body": dumps("Data Transform Train Function executed"),
+        }
 
     except Exception as e:
         raise e
