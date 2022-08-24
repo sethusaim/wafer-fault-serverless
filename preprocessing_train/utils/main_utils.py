@@ -3,6 +3,7 @@ from shutil import rmtree
 
 from numpy import asarray
 from pandas import DataFrame
+
 from s3_operations import S3_Operation
 from utils.logger import App_Logger
 from utils.read_params import get_log_dic, read_params
@@ -45,7 +46,9 @@ class Main_Utils:
         self.log_writer.start_log("start", **log_dic)
 
         try:
-            self.s3.upload_folder(self.log_dir, "logs", log_dic["log_file"])
+            log_folder = "/tmp" + "/" + self.log_dir
+
+            self.s3.upload_folder(log_folder, "logs", log_dic["log_file"])
 
             self.log_writer.log(f"Uploaded logs to logs s3 bucket", **log_dic)
 
@@ -53,7 +56,7 @@ class Main_Utils:
 
             self.log_writer.stop_log()
 
-            rmtree(self.log_dir)
+            rmtree(log_folder)
 
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
@@ -137,7 +140,7 @@ class Main_Utils:
         try:
             current_date = f"{datetime.now().strftime('%Y-%m-%d')}"
 
-            ip_fname = current_date + "-" + self.files[file]
+            ip_fname = "/tmp" + "/" + current_date + "-" + self.files[file]
 
             self.log_writer.log(
                 "Got input file from s3 bucket based on the time stamp", **log_dic
