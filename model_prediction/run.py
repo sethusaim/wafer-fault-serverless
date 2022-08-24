@@ -68,3 +68,18 @@ if __name__ == "__main__":
         utils = Main_Utils()
 
         utils.upload_logs()
+
+
+def lambda_handler(event,context):
+    try:
+        run = Run()
+        
+        run.predict_from_model()
+    
+    except Exception as e:
+        raise e 
+    
+    finally:
+        utils = Main_Utils()
+        
+        utils.upload_logs()
