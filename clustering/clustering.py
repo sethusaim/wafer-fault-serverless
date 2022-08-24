@@ -1,6 +1,7 @@
 from kneed import KneeLocator
-from s3_operations import S3_Operation
 from sklearn.cluster import KMeans
+
+from s3_operations import S3_Operation
 from utils.logger import App_Logger
 from utils.main_utils import Main_Utils
 from utils.read_params import get_log_dic, read_params
