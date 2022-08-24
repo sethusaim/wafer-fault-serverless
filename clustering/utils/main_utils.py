@@ -2,6 +2,7 @@ from datetime import datetime
 from shutil import rmtree
 
 from matplotlib.pyplot import plot, savefig, title, xlabel, ylabel
+
 from s3_operations import S3_Operation
 from utils.logger import App_Logger
 from utils.read_params import get_log_dic, read_params
@@ -46,7 +47,9 @@ class Main_Utils:
         self.log_writer.start_log("start", **log_dic)
 
         try:
-            self.s3.upload_folder(self.log_dir, "logs", log_dic["log_file"])
+            log_folder = "/tmp" + "/" + self.log_dir
+
+            self.s3.upload_folder(log_folder, "logs", log_dic["log_file"])
 
             self.log_writer.log(f"Uploaded logs to s3 bucket", **log_dic)
 
@@ -54,7 +57,7 @@ class Main_Utils:
 
             self.log_writer.stop_log()
 
-            rmtree(self.log_dir)
+            rmtree(log_folder)
 
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
@@ -79,7 +82,7 @@ class Main_Utils:
         try:
             cluster_fname = fname.replace(".csv", "-" + str(idx) + ".csv")
 
-            cluster_fname = self.current_date + "-" + cluster_fname
+            cluster_fname = "/tmp" + "/" + self.current_date + "-" + cluster_fname
 
             self.log_writer.log(
                 f"Got cluster file name for cluster {idx} of file {fname}", **log_dic,
@@ -193,7 +196,7 @@ class Main_Utils:
 
             ylabel("WCSS")
 
-            fname = self.current_date + "-" + self.files["elbow_plot"]
+            fname = "/tmp" + "/" + self.current_date + "-" + self.files["elbow_plot"]
 
             savefig(fname)
 
