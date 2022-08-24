@@ -54,7 +54,7 @@ class Run:
             self.log_writer.exception_log(e, **log_dic)
 
 
-if __name__ == "__main__":
+def lambda_handler(event, context):
     try:
         run = Run()
 
