@@ -75,15 +75,14 @@ class Run:
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
 
-
-if __name__ == "__main__":
+def lambda_handler(event,context):
     try:
         run = Run()
 
         run.run_preprocess()
 
     except Exception as e:
-        raise e
+        raise e 
 
     finally:
         utils = Main_Utils()
