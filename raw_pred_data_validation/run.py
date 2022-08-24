@@ -1,3 +1,5 @@
+from json import dumps
+
 from pred_data_validation import Raw_Pred_Data_Validation
 from utils.logger import App_Logger
 from utils.main_utils import Main_Utils
@@ -65,11 +67,16 @@ class Run:
             self.log_writer.exception_log(e, **log_dic)
 
 
-if __name__ == "__main__":
+def lambda_handler(event, context):
     try:
         run = Run()
 
-        run.raw_pred_data_validation()
+        run = run.raw_pred_data_validation()
+
+        return {
+            "statusCode": 200,
+            "body": dumps("Raw Prediction Data Validation Function executed"),
+        }
 
     except Exception as e:
         raise e
