@@ -47,6 +47,8 @@ class Main_Utils:
         self.log_writer.start_log("start", **log_dic)
 
         try:
+            log_folder = "/tmp" + "/" + self.log_dir
+
             self.s3.upload_folder(self.log_dir, "logs", log_dic["log_file"])
 
             self.log_writer.log(f"Uploaded logs to logs bucket", **log_dic)
@@ -55,7 +57,7 @@ class Main_Utils:
 
             self.log_writer.stop_log()
 
-            rmtree(self.log_dir)
+            rmtree(log_folder)
 
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
@@ -81,7 +83,7 @@ class Main_Utils:
         self.log_writer.start_log("start", **log_dic)
 
         try:
-            file = self.current_date + "-" + self.files[file]
+            file = "/tmp" + "/" + self.current_date + "-" + self.files[file]
 
             self.log_writer.log("Got file name with date time stamp", **log_dic)
 
