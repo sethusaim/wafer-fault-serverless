@@ -69,9 +69,11 @@ class DB_Operation_Train:
     def export_collection_to_csv(self, good_data_db_name, good_data_collection_name):
         """
         Method Name :   export_collection_to_csv
-        Description :   This method inserts the good data in MongoDB as collection
-
-        Output      :   A csv file stored in input files bucket, containing good data which was stored in MongoDB
+        Description :   This method exports the good data in MongoDB as collection and uploades the csv file 
+                        to s3 bucket
+ 
+        Output      :   A csv file stored in input files bucket, containing good data which was stored in 
+                        MongoDB
         On Failure  :   Write an exception log and then raise an exception
 
         Version     :   1.2

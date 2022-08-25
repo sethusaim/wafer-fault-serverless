@@ -35,7 +35,7 @@ class MongoDB_Operation:
         Method Name :   get_database
         Description :   This method gets database from MongoDB from the db_name
 
-        Output      :   A database is created in MongoDB with name as db_name
+        Output      :   A database object is returned based on the db_name
         On Failure  :   Write an exception log and then raise an exception
 
         Version     :   1.2
@@ -62,9 +62,9 @@ class MongoDB_Operation:
     def get_collection_as_dataframe(self, db_name, collection_name, log_file):
         """
         Method Name :   get_collection_as_dataframe
-        Description :   This method is used for converting the selected collection to dataframe
+        Description :   This method is used for getting the collection to dataframe
 
-        Output      :   A collection is returned from the selected db_name and collection_name
+        Output      :   A dataframe is returned as a collection
         On Failure  :   Write an exception log and then raise an exception
 
         Version     :   1.2
