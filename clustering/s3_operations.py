@@ -39,9 +39,9 @@ class S3_Operation:
     def get_bucket(self, bucket, log_file):
         """
         Method Name :   get_bucket
-        Description :   This method gets the bucket from s3 
+        Description :   This method gets the s3 bucket object based on the bucket name 
 
-        Output      :   A s3 bucket name is returned based on the bucket
+        Output      :   A s3 bucket object is returned based on the bucket name
         On Failure  :   Write an exception log and then raise an exception
 
         Version     :   1.2
@@ -68,9 +68,9 @@ class S3_Operation:
     def get_file_object(self, fname, bucket, log_file, pattern=False):
         """
         Method Name :   get_file_object
-        Description :   This method gets the file object from s3 bucket
+        Description :   This method gets the file object from s3 bucket based on the filename
 
-        Output      :   A file object is returned
+        Output      :   A file object is returned from s3 bucket based on the filename
         On Failure  :   Write an exception log and then raise an exception
 
         Version     :   1.2
@@ -106,14 +106,12 @@ class S3_Operation:
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
 
-    def read_object(
-        self, object, log_file, decode=True, make_readable=False,
-    ):
+    def read_object(self, object, log_file, decode=True, make_readable=False):
         """
         Method Name :   read_object
-        Description :   This method reads the object with kwargs
+        Description :   This method reads the s3 object with kwargs
 
-        Output      :   A object is read with kwargs
+        Output      :   A s3 object is read with kwargs
         On Failure  :   Write an exception log and then raise an exception
 
         Version     :   1.2
@@ -206,14 +204,12 @@ class S3_Operation:
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
 
-    def save_model(
-        self, model, model_dir, model_bucket, log_file, idx=None,
-    ):
+    def save_model(self, model, model_dir, model_bucket, log_file, idx=None):
         """
         Method Name :   save_model
-        Description :   This method saves the model into particular model directory in s3 bucket with kwargs
+        Description :   This method saves the model into model directory in s3 bucket with kwargs
         
-        Output      :   A pandas series object consisting of runs for the particular experiment id
+        Output      :   A model is saved into model directory in s3 bucket 
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
@@ -304,9 +300,9 @@ class S3_Operation:
     def get_df_from_object(self, object, log_file):
         """
         Method Name :   get_df_from_object
-        Description :   This method gets dataframe from object 
+        Description :   This method gets dataframe from s3 bucket object 
         
-        Output      :   Dataframe is read from the object
+        Output      :   Dataframe is read from the s3 bucket object
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
@@ -340,7 +336,7 @@ class S3_Operation:
         Method Name :   read_csv
         Description :   This method reads the csv data from s3 bucket
         
-        Output      :   A pandas series object consisting of runs for the particular experiment id
+        Output      :   A dataframe is returned from s3 bucket
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
@@ -371,6 +367,16 @@ class S3_Operation:
             self.log_writer.exception_log(e, **log_dic)
 
     def upload_folder(self, folder, bucket, log_file):
+        """
+        Method Name :   upload_folder
+        Description :   This method uploades the folder to s3 bucket
+        
+        Output      :   The folder is uploaded to s3 bucket
+        On Failure  :   Write an exception log and then raise an exception
+        
+        Version     :   1.2
+        Revisions   :   moved setup to cloud
+        """
         log_dic = get_log_dic(
             self.__class__.__name__, self.upload_folder.__name__, __file__, log_file
         )

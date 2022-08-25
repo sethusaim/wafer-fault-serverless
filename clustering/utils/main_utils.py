@@ -32,9 +32,9 @@ class Main_Utils:
     def upload_logs(self):
         """
         Method Name :   upload_logs
-        Description :   This method uploads the logs to s3 bucket
+        Description :   This method uploads the logs folder to s3 bucket
         
-        Output      :   The logs are uploaded to s3 bucket
+        Output      :   The logs folder are uploaded to s3 bucket
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
@@ -148,7 +148,7 @@ class Main_Utils:
         Method Name :   get_training_data
         Description :   This method gets the training data from s3 bucket based on the key
         
-        Output      :   The cluster data is returned as dataframe from s3 bucket based on the key
+        Output      :   The training data is returned as a dataframe from s3 bucket based on the key
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
@@ -180,9 +180,9 @@ class Main_Utils:
     def save_and_upload_elbow_plot(self, max_clusters, wcss, log_file):
         """
         Method Name :   save_and_upload_elbow_plot
-        Description :   This method saves and uploades the elbow plot to s3 bucket
+        Description :   This method saves and uploades the elbow plot file to s3 bucket
         
-        Output      :   The elbow plot is saved ans uploaded to s3 bucket
+        Output      :   The elbow plot file is saved ans uploaded to s3 bucket
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
