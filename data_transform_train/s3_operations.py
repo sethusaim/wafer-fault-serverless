@@ -31,9 +31,9 @@ class S3_Operation:
     def read_object(self, object, log_file, decode=True, make_readable=False):
         """
         Method Name :   read_object
-        Description :   This method reads the object with kwargs
+        Description :   This method reads the s3 bucket object with kwargs
 
-        Output      :   A object is read with kwargs
+        Output      :   A s3 bucket object is read with kwargs
         On Failure  :   Write an exception log and then raise an exception
 
         Version     :   1.2
@@ -72,9 +72,9 @@ class S3_Operation:
     def get_df_from_object(self, object, log_file):
         """
         Method Name :   get_df_from_object
-        Description :   This method gets dataframe from object 
+        Description :   This method gets dataframe from s3 bucket object 
 
-        Output      :   Dataframe is read from the object
+        Output      :   Dataframe is read from the s3 bucket object
         On Failure  :   Write an exception log and then raise an exception
 
         Version     :   1.2
@@ -139,7 +139,7 @@ class S3_Operation:
     def read_csv_from_folder(self, folder_name, bucket, log_file):
         """
         Method Name :   read_csv_from_folder
-        Description :   This method reads the csv files from folder
+        Description :   This method reads the csv files from folder present in s3 bucket
 
         Output      :   A list of tuple of dataframe, along with absolute file name and file name is returned
         On Failure  :   Write an exception log and then raise an exception
@@ -155,6 +155,7 @@ class S3_Operation:
         )
 
         self.log_writer.start_log("start", **log_dic)
+        
         try:
             files = self.get_files_from_folder(
                 self.dir[folder_name], bucket, log_dic["log_file"]
@@ -234,9 +235,9 @@ class S3_Operation:
     def get_bucket(self, bucket, log_file):
         """
         Method Name :   get_bucket
-        Description :   This method gets the bucket from s3 
+        Description :   This method gets the s3 bucket object based on the bucket name
 
-        Output      :   A s3 bucket name is returned based on the bucket
+        Output      :   A s3 bucket object is returned based on the bucket name
         On Failure  :   Write an exception log and then raise an exception
 
         Version     :   1.2
@@ -290,9 +291,9 @@ class S3_Operation:
     def get_files_from_folder(self, folder_name, bucket, log_file):
         """
         Method Name :   get_files_from_folder
-        Description :   This method gets the files a folder in s3 bucket
+        Description :   This method gets the files from a folder present in s3 bucket
 
-        Output      :   A list of files is returned
+        Output      :   A list of files is returned from a folder present in s3 bucket
         On Failure  :   Write an exception log and then raise an exception
 
         Version     :   1.2
@@ -324,9 +325,9 @@ class S3_Operation:
     def get_file_object(self, fname, bucket, log_file):
         """
         Method Name :   get_file_object
-        Description :   This method gets the file object from s3 bucket
+        Description :   This method gets the file object from s3 bucket based on the filename
 
-        Output      :   A file object is returned
+        Output      :   A file object is returned from s3 bucket based on the filename
         On Failure  :   Write an exception log and then raise an exception
 
         Version     :   1.2
