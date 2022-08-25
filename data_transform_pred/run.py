@@ -8,7 +8,7 @@ from utils.read_params import get_log_dic
 
 class Run:
     """
-    Description :   This class is used for running the data transformation prediction pipeline
+    Description :   This class is used for running the data transformation prediction service
     Version     :   1.2
     
     Revisions   :   Moved to setup to cloud 

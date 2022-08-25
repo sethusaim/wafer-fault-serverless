@@ -23,9 +23,9 @@ class Data_Transform_Pred:
     def rename_column(self, from_col, to_col):
         """
         Method Name :   rename_column
-        Description :   This method renames the column name from from_col to_col
+        Description :   This method renames the column name from from_col to_col 
         
-        Output      :   The column name is renamed 
+        Output      :   A dataframe is returned with column name renamed 
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
@@ -70,7 +70,8 @@ class Data_Transform_Pred:
     def replace_missing_with_null(self):
         """
         Method Name :   replace_missing_with_null
-        Description :   This method replaces the missing values with null values
+        Description :   This method replaces the missing values with null values and uploades the null
+                        values csv file to s3 bucket
         
         Output      :   The column name is renamed 
         On Failure  :   Write an exception log and then raise an exception
@@ -78,8 +79,6 @@ class Data_Transform_Pred:
         Version     :   1.2
         Revisions   :   moved setup to cloud
         """
-        method_name = self.replace_missing_with_null.__name__
-
         log_dic = get_log_dic(
             self.__class__.__name__,
             self.replace_missing_with_null.__name__,
