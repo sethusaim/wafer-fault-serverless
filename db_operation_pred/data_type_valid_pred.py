@@ -7,7 +7,7 @@ from utils.read_params import get_log_dic
 
 class DB_Operation_Pred:
     """
-    Description :    This class shall be used for handling all the db operations
+    Description :    This class shall be used for handling all the database operations
     Version     :   1.2
     
     Revisions   :   Moved to setup to cloud 
@@ -69,9 +69,10 @@ class DB_Operation_Pred:
     def export_collection_to_csv(self, good_data_db_name, good_data_collection_name):
         """
         Method Name :   export_collection_to_csv
-        Description :   This method inserts the good data in MongoDB as collection
+        Description :   This method exports the good data in MongoDB as csv file
 
-        Output      :   A csv file stored in input files bucket, containing good data which was stored in MongoDB
+        Output      :   A csv file stored in input files bucket, containing good data which was stored in 
+                        MongoDB
         On Failure  :   Write an exception log and then raise an exception
 
         Version     :   1.2

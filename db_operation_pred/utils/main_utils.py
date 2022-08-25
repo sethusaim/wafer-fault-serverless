@@ -32,9 +32,9 @@ class Main_Utils:
     def upload_logs(self):
         """
         Method Name :   upload_logs
-        Description :   This method uploads the logs to s3 bucket
+        Description :   This method uploads the logs folder to s3 bucket
         
-        Output      :   The logs are uploaded to s3 bucket
+        Output      :   The logs folder are uploaded to s3 bucket
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
@@ -67,7 +67,7 @@ class Main_Utils:
         Method Name :   get_file_with_timestamp
         Description :   This method gets the file name with current time stamp
         
-        Output      :   The filename is returned based on te current time stmap
+        Output      :   The filename is returned based on the current time stamp
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2

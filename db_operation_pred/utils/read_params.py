@@ -30,8 +30,10 @@ def get_log_dic(class_name, method_name, file, log_file):
     """
     Method Name :   get_log_dic
     Description :   This method gets extra log params as dict
+    
     Output      :   Parameters are read from the params.yaml file
     On Failure  :   Write an exception log and then raise an exception
+    
     Version     :   1.2
     Revisions   :   moved setup to cloud
     """

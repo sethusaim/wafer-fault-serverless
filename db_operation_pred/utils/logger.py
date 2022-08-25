@@ -8,6 +8,13 @@ from utils.read_params import read_params
 
 
 class App_Logger:
+    """
+    Description :   This class is used for logging the important movement within the service
+    Version     :   1.2
+    
+    Revisions   :   Moved to setup to cloud 
+    """
+
     def __init__(self):
         self.config = read_params()
 

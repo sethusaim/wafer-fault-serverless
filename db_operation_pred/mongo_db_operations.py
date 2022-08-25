@@ -11,7 +11,7 @@ from utils.read_params import get_log_dic, read_params
 
 class MongoDB_Operation:
     """
-    Description :   This method is used for all mongodb operations
+    Description :   This method is used for all monogdb operations
     Version     :   1.2
     
     Revisions   :   Moved to setup to cloud 
@@ -33,7 +33,7 @@ class MongoDB_Operation:
     def get_database(self, db_name, log_file):
         """
         Method Name :   get_database
-        Description :   This method gets database from MongoDB from the db_name
+        Description :   This method gets database object from MongoDB from the db_name
 
         Output      :   A database is created in MongoDB with name as db_name
         On Failure  :   Write an exception log and then raise an exception
@@ -62,9 +62,9 @@ class MongoDB_Operation:
     def get_collection_as_dataframe(self, db_name, collection_name, log_file):
         """
         Method Name :   get_collection_as_dataframe
-        Description :   This method is used for converting the selected collection to dataframe
+        Description :   This method is used for getting the collection as a dataframe
 
-        Output      :   A collection is returned from the selected db_name and collection_name
+        Output      :   A collection is returned as a dataframe
         On Failure  :   Write an exception log and then raise an exception
 
         Version     :   1.2
