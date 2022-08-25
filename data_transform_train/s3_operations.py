@@ -155,7 +155,7 @@ class S3_Operation:
         )
 
         self.log_writer.start_log("start", **log_dic)
-        
+
         try:
             files = self.get_files_from_folder(
                 self.dir[folder_name], bucket, log_dic["log_file"]
