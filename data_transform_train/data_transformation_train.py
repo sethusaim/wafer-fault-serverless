@@ -5,7 +5,8 @@ from utils.read_params import get_log_dic, read_params
 
 class Data_Transform_Train:
     """
-    Description :   This class shall be used for transforming the good raw training data before loading it in database
+    Description :   This class shall be used for transforming the good raw training data before loading 
+                    it in database
     Version     :   1.2
     
     Revisions   :   Moved to setup to cloud 
