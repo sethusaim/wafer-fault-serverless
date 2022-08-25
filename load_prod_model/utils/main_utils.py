@@ -31,9 +31,9 @@ class Main_Utils:
     def upload_logs(self):
         """
         Method Name :   upload_logs
-        Description :   This method uploads the logs to s3 bucket
+        Description :   This method uploads the logs folder to s3 bucket
         
-        Output      :   The logs are uploaded to s3 bucket
+        Output      :   The logs folder is uploaded to s3 bucket
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
@@ -64,9 +64,9 @@ class Main_Utils:
     def get_model_file(self, key, model_name, log_file):
         """
         Method Name :   get_model_file
-        Description :   This method get the model file name from s3 bucket 
+        Description :   This method get the model file name from s3 bucket based on key and model name
         
-        Output      :   The model file is retrived from s3 bucket
+        Output      :   The model file is retrived from s3 bucket based on key and model name
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
@@ -93,9 +93,9 @@ class Main_Utils:
     def create_prod_and_stag_dirs(self, bucket, log_file):
         """
         Method Name :   create_prod_and_stag_dirs
-        Description :   This method creates folders for production and staging bucket
+        Description :   This method creates folders for production and staging in s3 bucket
 
-        Output      :   Folders for production and staging are created in s3 bucket
+        Output      :   Production and staging folders are created in s3 bucket
         On Failure  :   Write an exception log and then raise an exception
 
         Version     :   1.2
@@ -123,7 +123,8 @@ class Main_Utils:
     def get_number_of_clusters(self, log_file):
         """
         Method Name :   get_number_of_cluster
-        Description :   This method gets the number of clusters based on training data on which clustering algorithm was used
+        Description :   This method gets the number of clusters based on training data on which clustering 
+                        algorithm was used
 
         Output      :   The number of clusters for the given training data is returned
         On Failure  :   Write an exception log and then raise an exception

@@ -11,7 +11,7 @@ from utils.read_params import get_log_dic, read_params
 
 class MLFlow_Operation:
     """
-    Description :    This class shall be used for handling all the mlflow operations
+    Description :   This class shall be used for handling all the mlflow operations
     Version     :   1.2
     
     Revisions   :   Moved to setup to cloud 
@@ -37,7 +37,7 @@ class MLFlow_Operation:
     def set_mlflow_tracking_uri(self):
         """
         Method Name :   set_mlflow_tracking_uri
-        Description :   This method sets the mlflow tracking uri in mlflow server 
+        Description :   This method sets the mlflow tracking uri for the mlflow server 
         
         Output      :   MLFLow server will set the particular uri to communicate with code 
         On Failure  :   Write an exception log and then raise an exception
@@ -67,9 +67,10 @@ class MLFlow_Operation:
     def get_experiment(self, exp_name):
         """
         Method Name :   get_experiment
-        Description :   This method gets the experiment from mlflow server using the experiment name
+        Description :   This method gets the experiment from mlflow server based on the experiment name
         
-        Output      :   An experiment which was stored in mlflow server
+        Output      :   Returns an experiment object based on the experiment name which already exists in 
+                        mlflow server
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
@@ -99,9 +100,9 @@ class MLFlow_Operation:
     def get_runs_from_mlflow(self, exp_id):
         """
         Method Name :   get_runs_from_mlflow
-        Description :   This method gets the runs from the mlflow server for a particular experiment id
+        Description :   This method gets the runs from the mlflow server based on the experiment id
         
-        Output      :   A pandas series object consisting of runs for the particular experiment id
+        Output      :   A pandas series object consisting of runs based on the experiment id
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
@@ -134,7 +135,7 @@ class MLFlow_Operation:
     def get_mlflow_models(self):
         """
         Method Name :   get_mlflow_models
-        Description :   This method gets the registered models in mlflow server
+        Description :   This method gets the list of registered models present in the mlflow server
         
         Output      :   A list of registered model names stored in mlflow server
         On Failure  :   Write an exception log and then raise an exception
@@ -166,7 +167,7 @@ class MLFlow_Operation:
     def search_mlflow_models(self, order):
         """
         Method Name :   search_mlflow_models
-        Description :   This method searches for registered models and returns them in the mentioned order
+        Description :   This method searches for registered models based on the order
         
         Output      :   A list of registered models in the mentioned order
         On Failure  :   Write an exception log and then raise an exception
@@ -202,9 +203,11 @@ class MLFlow_Operation:
     ):
         """
         Method Name :   transition_mlflow_model
-        Description :   This method transitions mlflow model from one stage to other stage, and does the same in s3 bucket
+        Description :   This method transitions mlflow model from one stage to other stage, and does the 
+                        same in s3 bucket
         
-        Output      :   A mlflow model is transitioned from one stage to another, and same is reflected in s3 bucket
+        Output      :   A mlflow model is transitioned from one stage to another, and same is reflected in 
+                        s3 bucket
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
@@ -291,10 +294,10 @@ class MLFlow_Operation:
     def transition_best_models(self, model, top_models):
         """
         Method Name :   transition_best_models
-        Description :   This method transitions the models to staging or production based on the condition nad moves the models within
-                        s3 buckets also.
+        Description :   This method transitions the models to staging or production based on the condition 
+                        and moves the models within s3 buckets also.
         
-        Output      :   A list of registered models in the mentioned order
+        Output      :   Top models are transitioned to production folder and rest to staging folder 
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
@@ -345,9 +348,10 @@ class MLFlow_Operation:
     def get_best_models(self, runs, num_clusters):
         """
         Method Name :   get_best_models
-        Description :   This method get the best models from the runs dataframe and based on the number of clusters
+        Description :   This method get the best models from the runs dataframe and based on the number of 
+                        clusters
         
-        Output      :   A list of registered models in the mentioned order
+        Output      :   A list of top models is returned based on the number of clusters and runs
         On Failure  :   Write an exception log and then raise an exception
         
         Version     :   1.2
