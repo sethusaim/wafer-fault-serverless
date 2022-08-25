@@ -46,7 +46,7 @@ class Main_Utils:
 
         try:
             log_folder = "/tmp" + "/" + self.log_dir
-            
+
             self.s3.upload_folder(self.log_dir, "logs", log_dic["log_file"])
 
             self.log_writer.log(f"Uploaded logs to logs s3 bucket", **log_dic)
@@ -282,7 +282,7 @@ class Main_Utils:
 
         try:
             current_date = f"{datetime.now().strftime('%Y-%m-%d')}"
-            
+
             ip_fname = "/tmp" + "/" + current_date + "-" + self.files[file]
 
             self.log_writer.log(

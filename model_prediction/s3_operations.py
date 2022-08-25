@@ -380,7 +380,7 @@ class S3_Operation:
 
         try:
             func = lambda fname: self.files[fname] if fidx is False else fname
-            
+
             local_fname = "/tmp" + "/" + func(local_fname)
 
             bucket_fname = func(bucket_fname)
