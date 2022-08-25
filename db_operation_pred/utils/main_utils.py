@@ -83,7 +83,7 @@ class Main_Utils:
         self.log_writer.start_log("start", **log_dic)
 
         try:
-            file = self.current_date + "-" + self.files[file]
+            file = "/tmp" + "/" + self.current_date + "-" + self.files[file]
 
             self.log_writer.log("Got file name with date time stamp", **log_dic)
 

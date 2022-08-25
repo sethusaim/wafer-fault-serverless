@@ -243,7 +243,8 @@ class S3_Operation:
     def read_csv_from_folder(self, folder_name, bucket, log_file):
         """
         Method Name :   read_csv_from_folder
-        Description :   This method reads the csv files from folder based on the folder name
+        Description :   This method reads the csv files from folder present in s3 bucket based on the 
+                        folder name
 
         Output      :   A list of tuple of dataframe, along with absolute file name and file name is 
                         returned from folder present in s3 bucket based on the folder name

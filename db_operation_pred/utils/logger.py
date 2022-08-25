@@ -52,7 +52,7 @@ class App_Logger:
     def log(self, log_message, class_name, method_name, file, log_file):
         """
         Method Name :   log
-        Description :   This method writes the log info using current date and time
+        Description :   This method writes the log info to log file using current date and time
         
         Output      :   log information is written to file
         On Failure  :   Raise an exception
@@ -80,7 +80,7 @@ class App_Logger:
     def start_log(self, key, class_name, method_name, file, log_file):
         """
         Method Name :   start_log
-        Description :   This method creates an entry point log in log file
+        Description :   This method writes an entry point log in log file
 
         Output      :   An entry log information is written to log file
         On Failure  :   Raise an exception
@@ -106,7 +106,7 @@ class App_Logger:
     def exception_log(self, exception, class_name, method_name, file, log_file):
         """
         Method Name :   exception_log
-        Description :   This method creates an exception log in log file and raises Exception
+        Description :   This method writes an exception log in log file and raises exception
 
         Output      :   Exception information is written to log file
         On Failure  :   Raise an exception
