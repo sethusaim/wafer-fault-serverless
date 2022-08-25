@@ -4,7 +4,7 @@ from utils.main_utils import Main_Utils
 from utils.read_params import get_log_dic
 
 
-class Load_Prod_Model:
+class Run:
     """
     Description :   This class shall be used for loading the production model
     Version     :   1.2
@@ -22,7 +22,8 @@ class Load_Prod_Model:
     def load_production_model(self):
         """
         Method Name :   load_production_model
-        Description :   This method is responsible for finding the best model based on metrics and then transitioned them to thier stages
+        Description :   This method is responsible for finding the best model based on metrics and then 
+                        transitioned them to thier stages
 
         Output      :   The best models are put in production and rest are put in staging
         On Failure  :   Write an exception log and then raise an exception
@@ -88,9 +89,9 @@ class Load_Prod_Model:
             self.log_writer.exception_log(e, **log_dic)
 
 
-if __name__ == "__main__":
+def lambda_handler(event, context):
     try:
-        run = Load_Prod_Model()
+        run = Run()
 
         run.load_production_model()
 
