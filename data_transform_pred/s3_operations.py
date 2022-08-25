@@ -157,6 +157,7 @@ class S3_Operation:
         )
 
         self.log_writer.start_log("start", **log_dic)
+
         try:
             files = self.get_files_from_folder(
                 self.dir[folder_name], bucket, log_dic["log_file"]
@@ -180,9 +181,7 @@ class S3_Operation:
         except Exception as e:
             self.log_writer.exception_log(e, **log_dic)
 
-    def upload_file(
-        self, from_fname, to_fname, bucket, log_file, delete=True,
-    ):
+    def upload_file(self, from_fname, to_fname, bucket, log_file, delete=True):
         """
         Method Name :   upload_file
         Description :   This method uploades a file to s3 bucket with kwargs
@@ -392,6 +391,16 @@ class S3_Operation:
             self.log_writer.exception_log(e, **log_dic)
 
     def upload_folder(self, folder, bucket, log_file):
+        """
+        Method Name :   upload_folder
+        Description :   This method uploads the folder to s3 bucket
+
+        Output      :   The folder is uploaded to s3 bucket 
+        On Failure  :   Write an exception log and then raise an exception
+
+        Version     :   1.2
+        Revisions   :   moved setup to cloud
+        """
         log_dic = get_log_dic(
             self.__class__.__name__, self.upload_folder.__name__, __file__, log_file
         )
