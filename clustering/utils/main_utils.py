@@ -178,6 +178,16 @@ class Main_Utils:
             self.log_writer.exception_log(e, **log_dic)
 
     def save_and_upload_elbow_plot(self, max_clusters, wcss, log_file):
+        """
+        Method Name :   save_and_upload_elbow_plot
+        Description :   This method saves and uploades the elbow plot to s3 bucket
+        
+        Output      :   The elbow plot is saved ans uploaded to s3 bucket
+        On Failure  :   Write an exception log and then raise an exception
+        
+        Version     :   1.2
+        Revisions   :   moved setup to cloud
+        """
         log_dic = get_log_dic(
             self.__class__.__name__,
             self.save_and_upload_elbow_plot.__name__,

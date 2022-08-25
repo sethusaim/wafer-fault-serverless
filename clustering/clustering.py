@@ -35,7 +35,8 @@ class KMeans_Clustering:
     def draw_elbow_plot(self, data):
         """
         Method Name :   draw_elbow_plot
-        Description :   This method saves the plot to s3 bucket and decides the optimum number of clusters to the file.
+        Description :   This method saves the plot to s3 bucket and decides the optimum number of clusters 
+                        to the file.
         
         Output      :   An elbow plot figure saved to input files bucket
         On Failure  :   Write an exception log and then raise an exception
