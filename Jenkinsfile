@@ -22,19 +22,19 @@ pipeline {
     //   }
     // }
 
-    // stage('Run Ansible Playbooks') {
-    //   when {
-    //     changeset 'ansible_playbooks/*'
-    //   }
+    stage('Run Ansible Playbooks') {
+      when {
+        changeset 'ansible_playbooks/*'
+      }
 
-    //   steps {
-    //     sshagent(['ansible_ssh_key']) {
-    //       sh 'ssh -o StrictHostKeyChecking=no -l ubuntu ANSIBLE_IP wget https://raw.githubusercontent.com/sethusaim/Wafer-Fault-Kubernetes/main/scripts/run_ansible.sh'
+      steps {
+        sshagent(['ansible_ssh_key']) {
+          sh 'ssh -o StrictHostKeyChecking=no -l ubuntu ANSIBLE_IP wget https://raw.githubusercontent.com/sethusaim/Wafer-Fault-Kubernetes/main/scripts/run_ansible.sh'
 
-    //       sh 'ssh -o StrictHostKeyChecking=no -l ubuntu ANSIBLE_IP bash run_ansible.sh'
-    //     }
-    //   }
-    // }
+          sh 'ssh -o StrictHostKeyChecking=no -l ubuntu ANSIBLE_IP bash run_ansible.sh'
+        }
+      }
+    }
 
     stage('Build and Push Clustering Service') {
       environment {
